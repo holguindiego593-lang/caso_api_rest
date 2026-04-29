@@ -16,7 +16,6 @@ const JWT_SECRET = process.env.JWT_SECRET || 'secreto_super_seguro';
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
     
-    // Encriptar contraseña
     const hashedPassword = await bcrypt.hash(password, 10);
     users.push({ username, password: hashedPassword });
     
@@ -25,10 +24,10 @@ app.post('/register', async (req, res) => {
 
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
-    const user = users.find(u => u.username === username);
+    const user = users.find(u => u.username === useername);
 
     if (user && await bcrypt.compare(password, user.password)) {
-        // Generar JWT
+        
         const token = jwt.sign({ username }, JWT_SECRET, { expiresIn: '1h' });
         res.json({ token });
     } else {
