@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "caso-api-rest",
   "version": "1.0.0",
   "description": "API REST básica con autenticación",
@@ -9,7 +10,7 @@
     "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "Diego",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",
